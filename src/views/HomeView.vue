@@ -52,25 +52,25 @@ function addToCartWithQuantity(item, index) {
 
   <div class="products d-flex justify-content-center align-items-center ">
     <ul class="product-list d-flex justify-content-center align-items-center p-0">
-      <li class="list-unstyled m-5" v-for="(item, index) in shoppingList" :key="index">
+      <li class="list-unstyled mx-3 p-4 border rounded-4" v-for="(item, index) in shoppingList" :key="index">
         <img class="product-image
         " :src="item.photo" :alt="item.title" />
         <p>{{ item.title }}</p>  <p>${{ item.price.toFixed(2) }}</p>
   
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column justify-content-center align-items-start">
           <!-- Decrement Button -->
-          <div class="d-flex">
+          <div class="inc m-0">
             <button @click="decrementQuantity(index)">-</button>
       
             <!-- Display the quantity -->
-            <span>{{ quantities[index] }}</span>
+            <span class="px-2">{{ quantities[index] }}</span>
       
             <!-- Increment Button -->
-            <button @click="incrementQuantity(index)">+</button>
+            <button class="dec" @click="incrementQuantity(index)">+</button>
           </div>
     
           <!-- Add to Cart Button -->
-          <button @click="addToCartWithQuantity(item, quantities[index])">Add to Cart</button>
+          <button class="mt-2 px-2 rounded-3" @click="addToCartWithQuantity(item, quantities[index])">Add to Cart</button>
         </div>
       </li>
     </ul>
@@ -95,6 +95,10 @@ button {
 }
 .product-list {
   font-size: 20px;
+}
+.inc button {
+  width: 32px;
+  border-radius: 50%;
 }
 
 </style>
