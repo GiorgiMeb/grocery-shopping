@@ -62,14 +62,14 @@ const showLoginModal = ref(false); // Control modal visibility
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary d-flex justify-content-between align-items-center ">
-  <div class="container-fluid flex-nowrap m-0 p-0">
-    <a class="navbar-brand " href="#"><img class="logo" src="./assets/logo.webp" alt=""></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg  d-flex justify-content-center ">
+  <div class="container-fluid justify-content-between align-items-center m-0 p-0 mx-5">
+    <a class="navbar-brand m-0" href="#"><img class="logo" src="./assets/logo.webp" alt=""></a>
+    <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav p-3">
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav p-3 m-0">
         <li class="nav-item">
           <router-link to="/">Home</router-link>
         </li>
@@ -79,19 +79,21 @@ const showLoginModal = ref(false); // Control modal visibility
         <li class="nav-item">
           <router-link to="/contact">Contact</router-link>
         </li>
+        <div class="d-flex m-0">
+          <div class="d-flex">
+            <li class="nav-item">
+              <router-link to="/cart">Cart ({{ cart.length }})</router-link>
+            </li>
+          </div>
+          <div class="log-in">
+            <button @click="showLoginModal = true">Login</button>
+            <LoginModal 
+            :isVisible="showLoginModal" 
+            @close="showLoginModal = false" 
+            />
+          </div>
+        </div>
       </ul>
-    </div>
-    <div class="d-flex">
-      <li class="nav-item">
-        <router-link to="/cart">Cart ({{ cart.length }})</router-link>
-      </li>
-      <div class="log-in">
-        <button @click="showLoginModal = true">Login</button>
-    <LoginModal 
-      :isVisible="showLoginModal" 
-      @close="showLoginModal = false" 
-    />
-      </div>
     </div>
   </div>
 </nav>
@@ -110,6 +112,12 @@ const showLoginModal = ref(false); // Control modal visibility
 }
 li {
   list-style: none;
+}
+ul {
+  width: 100%;
+}
+nav {
+  width: 100% !important;
 }
 .nav-item a {
   color: black;

@@ -24,5 +24,9 @@ function removeItem(index) {
 <style>
 .product-image {
   display: flex;
+  width: 100px;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  margin: 0;
 }
 </style>
