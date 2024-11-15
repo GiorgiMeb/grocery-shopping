@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { RouterView } from 'vue-router';
 
-
 import LoginModal from './components/LoginModal.vue';
 import breadImage from './assets/bread.webp';
 import eggsImage from './assets/eggs.webp';

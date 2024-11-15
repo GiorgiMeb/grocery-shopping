@@ -1,6 +1,9 @@
 <script setup>
 import { defineProps, ref } from 'vue';
 
+import Footer from '../components/Footer.vue';
+
+
 
 // Define the props being passed from App.vue
 const props = defineProps({
@@ -110,6 +113,7 @@ function addToCartWithQuantity(item, index) {
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped>
